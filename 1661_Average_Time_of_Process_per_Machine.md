@@ -35,9 +35,9 @@ The result format is in the following example.
 
  
 
-#### Example 1:
+## Example:
 
-##### Input: 
+#### Input: 
 Activity table:
 ```ruby
 +------------+------------+---------------+-----------+
@@ -57,7 +57,7 @@ Activity table:
 | 2          | 1          | end           | 5.000     |
 +------------+------------+---------------+-----------+
 ```
-##### Output: 
+#### Output: 
 ```ruby
 +------------+-----------------+
 | machine_id | processing_time |
