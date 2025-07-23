@@ -59,7 +59,7 @@ In 2015-01-04, the temperature was higher than the previous day (20 -> 30).
 This solution is the fastest one.
 Internally, it is implemented with a single pass through the sorted data, which is much faster than a JOIN.
 
-```
+```ruby
 WITH WeatherData AS
 (
     SELECT 
@@ -85,7 +85,7 @@ WHERE
 
 ### Using JOIN and DATEDIFF()
 
-```
+```ruby
 SELECT 
     w1.id
 FROM 
@@ -101,7 +101,7 @@ WHERE
 ### Using Cartesian Product and WHERE Clause
 The speed of this one is similar as the JOIN one but more out-dated and not that clear.
 
-```
+```ruby
 SELECT 
     w2.id
 FROM 
