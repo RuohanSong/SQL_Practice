@@ -94,7 +94,7 @@ Each row of this table indicates that a student with ID student_id attended the 
 ```
 
 #### Output: 
-````ruby
+```ruby
 +------------+--------------+--------------+----------------+
 | student_id | student_name | subject_name | attended_exams |
 +------------+--------------+--------------+----------------+
@@ -150,6 +150,7 @@ CROSS JOIN Subjects;
 > It has no `ON` clause because we are just joining everything to everything.
 
 2. `LEFT JOIN` the table from the first step with `Examinations` table to create a new table containing rows where the `student_id` and `subject_name` match.
+
 ```ruby
 SELECT Students.student_id, Students.student_name, Subjects.subject_name
 FROM Students  
@@ -157,8 +158,10 @@ CROSS JOIN Subjects
 LEFT JOIN Examinations ON Students.student_id = Examinations.student_id 
                       AND Subjects.subject_name = Examinations.subject_name;
 ```
+
 > [!NOTE]
 > Now the newly created table looks as below:
+
 ```ruby
 | student_id | student_name | subject_name |
 | ---------- | ------------ | ------------ |
@@ -178,6 +181,7 @@ LEFT JOIN Examinations ON Students.student_id = Examinations.student_id
 | 6          | Alex         | Physics      |
 | 6          | Alex         | Math         |
 ```
+
 > Three rows from the right table (Examinations) that get matched to the single row (1, Alice, Math) from the left table."
 
 3. Count how many times each student took for one subject.
