@@ -185,6 +185,9 @@ LEFT JOIN Examinations ON Students.student_id = Examinations.student_id
 > Three rows from the right table (Examinations) that get matched to the single row (1, Alice, Math) from the left table."
 
 3. Count how many times each student took for one subject.
+   Each (student, subject) combo is grouped, and within each group, we're counting how many times that combo appears in the `Examinations` table.
+>  `GROUP BY` clause tells SQL to group the matching rows from the joined table for each unique pair (student, subject). So, all rows with (1, Alice, Math) are grouped together, which is how it counts as 3.
+
 ```ruby
 SELECT Students.student_id, Students.student_name, Subjects.subject_name, COUNT(Examinations.student_id) as attended_exams
 FROM Students  
