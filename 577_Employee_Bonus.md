@@ -76,7 +76,6 @@ The result format is in the following example.
 #### Using `OUTER JOIN` and `WHERE` clause
 1. Since some employees do not have bonus records in `Bonus` table, use `LEFT OUTER JOIN` or `LEFT JOIN` to make sure that the joint table has all the employees' records.
 
-[!NOTE]
 The output of the joint table with the sample data is as below:
 ```ruby
 | name   | bonus |
@@ -86,7 +85,8 @@ The output of the joint table with the sample data is as below:
 | Brad   |       |
 | John   |       |
 ```
-The bonus values for `Brad` and `John` is empty, which is actually `NULL` in the database, so we use `IS NULL` or `IS NOT NULL` in the `WHERE` clause to handle the `NULL` values.
+> [!NOTE]
+> The bonus values for `Brad` and `John` is empty, which is actually `NULL` in the database, so we use `IS NULL` or `IS NOT NULL` in the `WHERE` clause to handle the `NULL` values.
 
 2. Add a `WHERE` clause to filter the records
 
