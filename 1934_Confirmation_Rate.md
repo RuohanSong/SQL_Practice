@@ -1,6 +1,6 @@
 # 1934. Confirmation Rate
 
-### Table: `Signups`
+##### Table: `Signups`
 ```ruby
 +----------------+----------+
 | Column Name    | Type     |
@@ -9,11 +9,13 @@
 | time_stamp     | datetime |
 +----------------+----------+
 ```
+
 `user_id` is the column of unique values for this table.
+
 Each row contains information about the signup time for the user with ID user_id.
  
 
-### Table: `Confirmations`
+##### Table: `Confirmations`
 ```ruby
 +----------------+----------+
 | Column Name    | Type     |
@@ -24,9 +26,13 @@ Each row contains information about the signup time for the user with ID user_id
 +----------------+----------+
 ```
 (`user_id`, `time_stamp`) is the primary key (combination of columns with unique values) for this table.
+
 `user_id` is a foreign key (reference column) to the `Signups` table.
+
 `action` is an ENUM (category) of the type ('confirmed', 'timeout')
+
 Each row of this table indicates that the user with ID user_id requested a confirmation message at `time_stamp` and that confirmation message was either confirmed ('confirmed') or expired without confirming ('timeout').
+
  
 ```
 The confirmation rate of a user is the number of 'confirmed' messages divided by the total number of requested confirmation messages. The confirmation rate of a user that did not request any confirmation messages is 0. Round the confirmation rate to two decimal places.
@@ -96,7 +102,12 @@ LEFT JOIN Confirmations
 GROUP BY Signups.user_id;
 ```
 
-`LEFT JOIN` means all rows from the `Signups` table will be included in the result set, even if there is no matching rows in the `Comfirmation` table.
+`LEFT JOIN` means all rows from the `Signups` table will be included in the result set, even if there is no matching rows in the 
+
+`Comfirmation` table.
+
 `COUNT(*)` counts the total number of rows in the result set.
+
 `CASE` statement ensures that the first `COUNT` only counts the number of 'confirmed' actions.
+
 `ROUND` rounds the confirmation rate to two decimal places.
